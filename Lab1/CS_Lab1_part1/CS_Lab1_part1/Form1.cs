@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,7 @@ namespace CS_Lab1_part1
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (!analText.ContainsKey(Char.ToLower(text[i])) && Char.IsLetter(text[i]))
+                if (!analText.ContainsKey(Char.ToLower(text[i])) && (Char.IsLetter(text[i]) || (Char.IsLetterOrDigit(text[i])) && checkBox1.Checked))
                 {
                     analText.Add(Char.ToLower(text[i]), 1);
                     letterCount++;
@@ -256,6 +257,204 @@ namespace CS_Lab1_part1
             {
                 chart1.SaveImage(saveFileDialog.FileName+".png",System.Windows.Forms.DataVisualization.Charting.ChartImageFormat.Png);
             }
+        }
+
+        private static readonly char[] Base64Letters = new[]
+                                        {
+                                              'A'
+                                            , 'B'
+                                            , 'C'
+                                            , 'D'
+                                            , 'E'
+                                            , 'F'
+                                            , 'G'
+                                            , 'H'
+                                            , 'I'
+                                            , 'J'
+                                            , 'K'
+                                            , 'L'
+                                            , 'M'
+                                            , 'N'
+                                            , 'O'
+                                            , 'P'
+                                            , 'Q'
+                                            , 'R'
+                                            , 'S'
+                                            , 'T'
+                                            , 'U'
+                                            , 'V'
+                                            , 'W'
+                                            , 'X'
+                                            , 'Y'
+                                            , 'Z'
+                                            , 'a'
+                                            , 'b'
+                                            , 'c'
+                                            , 'd'
+                                            , 'e'
+                                            , 'f'
+                                            , 'g'
+                                            , 'h'
+                                            , 'i'
+                                            , 'j'
+                                            , 'k'
+                                            , 'l'
+                                            , 'm'
+                                            , 'n'
+                                            , 'o'
+                                            , 'p'
+                                            , 'q'
+                                            , 'r'
+                                            , 's'
+                                            , 't'
+                                            , 'u'
+                                            , 'v'
+                                            , 'w'
+                                            , 'x'
+                                            , 'y'
+                                            , 'z'
+                                            , '0'
+                                            , '1'
+                                            , '2'
+                                            , '3'
+                                            , '4'
+                                            , '5'
+                                            , '6'
+                                            , '7'
+                                            , '8'
+                                            , '9'
+                                            , '+'
+                                            , '/'
+                                        };
+
+
+        public static BitArray Append(BitArray current, BitArray after)
+        {
+            var bools = new bool[current.Count + after.Count];
+            current.CopyTo(bools, 0);
+            after.CopyTo(bools, current.Count);
+            return new BitArray(bools);
+        }
+
+        public void Reverse(ref BitArray array)
+        {
+            int length = array.Length;
+            int mid = (length / 2);
+
+            for (int i = 0; i < mid; i++)
+            {
+                bool bit = array[i];
+                array[i] = array[length - i - 1];
+                array[length - i - 1] = bit;
+            }
+        }
+
+        string Encode3bytes(byte[] bytes)
+        {
+            string result = "";
+
+            BitArray oneArr = new BitArray(new byte[] { bytes[0] });
+            Reverse(ref oneArr);
+            //  oneArr.Length = 8;
+            BitArray secondArr = new BitArray(new byte[] { bytes[1] });
+            Reverse(ref secondArr);
+            // secondArr.Length = 8;
+            BitArray thirdArr = new BitArray(new byte[]{bytes[2]});
+            Reverse(ref thirdArr);
+          //  thirdArr.Length = 8;
+
+            BitArray bitArray = new BitArray(0);
+            bitArray = Append(oneArr, secondArr);
+            bitArray = Append(bitArray, thirdArr);
+
+
+            BitArray tmpBit = new BitArray(6);
+            int j = 0;
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                tmpBit.Set(i - 6 * j, bitArray[i]);
+                if (((i+1) % 6 == 0 || i==23) && i!=0 )
+                {
+                    byte[] tmpbyte = new byte[1];
+                    tmpBit.CopyTo(tmpbyte, 0);
+                    int value = 0;
+                    Reverse(ref tmpBit);
+                    for (int k = 0; k < tmpBit.Count; k++)
+                    {
+                        if (tmpBit[k])
+                            value += Convert.ToInt16(Math.Pow(2, k));
+                    }
+                    result += Base64Letters[value];
+                    j++;
+
+                    if (i/8 >= 1 && bytes[1] == 0 && bytes[2] == 0)
+                    {
+                        result += "==";
+                        return result;
+                    }
+                    if (i/8>=2 && bytes[2] == 0)
+                    {
+                        result += "=";
+                        return result;
+                    }
+                    
+                }
+                
+
+            }
+
+            return result;
+
+        }
+
+        string EncodeBase64(byte[] inarr)
+        {
+            List<byte> arr = inarr.ToList();
+            string result = "";
+
+            while (arr.Count % 3 != 0)
+            {
+                arr.Add(0);
+            }
+
+            for (int i = 0; i < arr.Count; i += 3)
+            {
+                result += Encode3bytes(new byte[] { arr[i], arr[i + 1], arr[i + 2] });
+
+            }
+
+            return result;
+        }
+
+        private void EncodeTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox2.Text = EncodeBase64(Encoding.UTF8.GetBytes(richTextBox1.Text));
+            displayBytes(Encoding.UTF8.GetBytes(richTextBox1.Text));
+        }
+
+        void displayBytes(byte[] arr)
+        {
+            richTextBox3.Text = "";   
+            for (int i = 0; i < arr.Length / 12; i++)
+            {
+                for (int j = 0; j < 8 && arr.Length > i * 8 + j; j++)
+                {
+                    richTextBox3.Text += Convert.ToString(arr[i * 8 + j], 16)+"\t";
+                }
+                richTextBox3.Text += "\n";
+            }
+        }
+
+        private void EncodeFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                
+                byte[] arr = File.ReadAllBytes(openFileDialog1.FileName);
+                richTextBox2.Text = EncodeBase64(arr);
+                displayBytes(arr);
+            }
+            
         }
     }
 }
