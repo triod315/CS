@@ -1,0 +1,14 @@
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\bin\Debug\CS_Lab1_part1.exe.config
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\bin\Debug\CS_Lab1_part1.exe
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\bin\Debug\CS_Lab1_part1.pdb
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.csprojAssemblyReference.cache
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.Form1.resources
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.Properties.Resources.resources
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.csproj.GenerateResource.cache
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.csproj.CoreCompileInputs.cache
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.exe
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.pdb
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\bin\Debug\Noemax.Compression.Net4.Trial.dll
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\bin\Debug\Noemax.Compression.Net4.Trial.xml
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.csproj.CopyComplete
+C:\Users\triod315\source\repos\CS_Lab1_part1\CS_Lab1_part1\obj\Debug\CS_Lab1_part1.CompressionReport.resources
