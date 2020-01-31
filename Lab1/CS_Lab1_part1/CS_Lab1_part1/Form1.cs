@@ -79,7 +79,7 @@ namespace CS_Lab1_part1
             foreach (var elem in freqText)
             {
                 if (1/elem.Value!=0)
-                    result += elem.Value * Math.Log(1 / elem.Value);
+                    result += elem.Value * Math.Log(1 / elem.Value, 2);
             }
 
             return result;
