@@ -495,8 +495,6 @@ RFC 2795       The Infinite Monkey Protocol Suite (IMPS)    1 April 2000
    Protocol (CHIMP), which the SIMIAN uses to communicate with the ZOO.
    The IMPS protocol number for CHIMP is 2.
 
-
-
 Christey                     Informational                      [Page 9]
 
 RFC 2795       The Infinite Monkey Protocol Suite (IMPS)    1 April 2000
@@ -1114,4 +1112,3 @@ Acknowledgement
 
 
 Christey                     Informational                     [Page 20]
-
