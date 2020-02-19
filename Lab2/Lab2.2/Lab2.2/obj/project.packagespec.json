@@ -1,0 +1,52 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/Lab2.2.csproj",
+    "projectName": "Lab2.2",
+    "projectPath": "/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/Lab2.2.csproj",
+    "outputPath": "/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp3.1"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.1": {
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "downloadDependencies": [
+        {
+          "name": "Microsoft.NETCore.App.Host.linux-x64",
+          "version": "[3.1.0, 3.1.0]"
+        }
+      ],
+      "frameworkReferences": {
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+    }
+  }
+}

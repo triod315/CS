@@ -1,0 +1,11 @@
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/bin/Debug/netcoreapp3.1/Lab2.2
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/bin/Debug/netcoreapp3.1/Lab2.2.deps.json
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/bin/Debug/netcoreapp3.1/Lab2.2.runtimeconfig.json
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/bin/Debug/netcoreapp3.1/Lab2.2.runtimeconfig.dev.json
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/bin/Debug/netcoreapp3.1/Lab2.2.dll
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/bin/Debug/netcoreapp3.1/Lab2.2.pdb
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/obj/Debug/netcoreapp3.1/Lab2.2.csprojAssemblyReference.cache
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/obj/Debug/netcoreapp3.1/Lab2.2.AssemblyInfoInputs.cache
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/obj/Debug/netcoreapp3.1/Lab2.2.AssemblyInfo.cs
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/obj/Debug/netcoreapp3.1/Lab2.2.dll
+/home/triod315/Documents/mywork/univ/cs/Lab2.2/Lab2.2/obj/Debug/netcoreapp3.1/Lab2.2.pdb
