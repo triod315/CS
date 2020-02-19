@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/triod315/.dotnet/store/|arch|/|tfm|",
+      "/home/triod315/.nuget/packages"
+    ]
+  }
+}

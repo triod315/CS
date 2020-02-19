@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/Lab2.1.csproj",
-    "projectName": "Lab2.1",
-    "projectPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/Lab2.1.csproj",
-    "outputPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/obj/",
+    "projectUniqueName": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/Lab2.3.csproj",
+    "projectName": "Lab2.3",
+    "projectPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/Lab2.3.csproj",
+    "outputPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"

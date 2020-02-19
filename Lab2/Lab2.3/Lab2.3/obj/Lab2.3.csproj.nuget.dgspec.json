@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/Lab2.1.csproj": {}
+    "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/Lab2.3.csproj": {}
   },
   "projects": {
-    "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/Lab2.1.csproj": {
+    "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/Lab2.3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/Lab2.1.csproj",
-        "projectName": "Lab2.1",
-        "projectPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/Lab2.1.csproj",
+        "projectUniqueName": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/Lab2.3.csproj",
+        "projectName": "Lab2.3",
+        "projectPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/Lab2.3.csproj",
         "packagesPath": "/home/triod315/.nuget/packages/",
-        "outputPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.1/Lab2.1/obj/",
+        "outputPath": "/home/triod315/Documents/mywork/univ/cs/CS/Lab2/Lab2.3/Lab2.3/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/triod315/.config/NuGet/NuGet.Config"
