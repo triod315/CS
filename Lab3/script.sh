@@ -23,7 +23,7 @@ flagsout="{"
 time_list="{"
 
 icc_cpu_flags=(sse2 ssse3 sse4.1 sse4.2)
-
+ml icc
 for iccflag in ${icc_cpu_flags[@]}
 do
     filename=icc$1$iccflag
