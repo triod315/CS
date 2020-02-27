@@ -1,7 +1,9 @@
 #!/bin/bash
 
-uind=`date | awk '{print $4}' | awk -F: '{print $2$3}'`
+uind=`date | awk '{print $4}' | awk -F: '{print $1$2$3}'`
 echo $uind
+#file=cat $1
+#echo $file>code$uind 
 compiler_flags=(O0 O1 O2 O3 Os Ofast)
 
 flagsout="{"
@@ -17,8 +19,8 @@ do
     time_list=$time_list", "$T
 done
 
-
-echo $flagsout}>"gnuresult$uind"
+echo $2 x $3>"gnuresult$uind"
+echo $flagsout}>>"gnuresult$uind"
 echo $time_list}>>"gnuresult$uind"
 flagsout="{"
 time_list="{"
@@ -35,7 +37,8 @@ do
     time_list=$time_list", "$T
 done
 
-echo $flagsout}>intelresult$uind
+echo $2 x $3>intelresult$uind
+echo $flagsout}>>intelresult$uind
 echo $time_list}>>intelresult$uind
 
 rm gp*
