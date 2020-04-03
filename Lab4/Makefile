@@ -1,8 +1,8 @@
 AS_FLAGS=--gdwarf-2 -o 
 LD_FLAGS=--static
-SOURCES=samdren.s
+SOURCES=remember_all.s
 OBJECTS=$(SOURCES:.s=.o)
-EXECUTABLE=samdren 
+EXECUTABLE=remember_all
 
 all: $(SOURCES)	$(EXECUTABLE)
 

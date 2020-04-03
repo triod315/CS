@@ -1,0 +1,17 @@
+int fd;
+int len;
+void *ptr;
+main() {
+    int argc = *%rsp;
+    char* arg1 = *(%rsp + 16);
+    if(argc != 1) goto exit;
+
+    fd = open(arg1, O_RDONLY, 0);
+    len = lseek(fd, SEEK_END, 0);
+    ptr = mmap(NULL, len, PROT_READ, MAP_SHARED, fd, 0);
+    write(stdout, ptr, len);
+    munmap(ptr, len);
+    close(fd);
+exit:
+    exit(0);
+}
