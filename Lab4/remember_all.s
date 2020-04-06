@@ -10,55 +10,57 @@ len: .quad 0
 .global _start
 
 _start:
-        movq (%rsp), %rbx             /* rbx = *rsp Кількість аргументів*/
-        movq %rbx, argc               /* argc = %rsp */
-        movq 16(%rsp), %rcx           /* rcx = rsp + 16 */
-        movq %rcx, argv               /* argv = %rcx */
 
-        cmpq $2, argc   /*if argc !=2 goto exit*/
+        movq (%rsp), %rbx       /* rbx = *rsp Кількість аргументів*/
+        movq %rbx, argc         /* argc = %rsp */
+        movq 16(%rsp), %rcx     /* rcx = rsp + 16 */
+        movq %rcx, argv         /* argv = %rcx */
+
+        cmpq $2, argc           /*if argc !=2 goto exit*/
         jne exit
 
         /*open file*/
-        movq $2, %rax /*номер sys_open у eax регістр*/
-        movq argv, %rdi /*ім'я файлу у ebx регістр*/
-        movq $O_RDONLY, %rdx /*відкриваємо файл як read-only*/
+        movq $2, %rax           /*номер sys_open у eax регістр*/
+        movq argv, %rdi         /*ім'я файлу у ebx регістр*/
+        movq $O_RDONLY, %rdx    /*відкриваємо файл як read-only*/
         syscall
         movq %rax, fd
 
         /*get len*/
-        movq $8, %rax
-        movq fd, %rdi
-        movq $SEEK_END, %rdx
-        movq $0, %rsi
+        movq $SYS_LSEEK, %rax   /*номер lseek*/
+        movq fd, %rdi           /*fd to rdi*/
+        movq $SEEK_END, %rdx    /*origin*/
+        movq $0, %rsi           /*off_t offset*/
         syscall
         
-        movq %rax, len
+        movq %rax, len          /*len=lseek(fd,0, $SYS_END)*/
 
         /*mmap*/
-        movq $9, %rax
-        movq len, %rsi
-        movq $PROT_READ, %rdx
-        movq $MAP_SHARED, %r10
-        movq fd, %r8
-        movq $0, %r9
+        movq $SYS_MMAP, %rax    /*номер mmap*/
+        movq len, %rsi          /*length to rsi*/
+        movq $PROT_READ, %rdx   /*prot_read to rdx*/
+        movq $MAP_SHARED, %r10  /*map_shared to r10*/
+        movq fd, %r8            /*fd ro r8*/
+        movq $0, %r9            /*0 to r9*/
         syscall
 
-        movq %rax, ptr
+        movq %rax, ptr          /*ptr = mmap(NULL, len, PROT_READ, MAP_SHARED, fd, 0);*/
 
         /*print file*/
         movq $SYS_WRITE, %rax
-        movq $STDOUT, %rdi
-        movq ptr, %rsi
-        movq len, %rdx
-        syscall
+        movq $STDOUT, %rdi      /*STDOUT number to rdi*/
+        movq ptr, %rsi          /*pointer to rsi*/
+        movq len, %rdx          /*length to rdx*/
+        syscall                 /*write(stdout, ptr, len);*/
 
         /*munmap*/
-        movq $11, %rax
-        movq len, %rsi
-        syscall
+        movq $SYS_MUNMAP, %rax  
+        movq ptr, %rdi          /*pointer to rdi*/
+        movq len, %rsi          /*length to rsi*/
+        syscall                 /*munmap(ptr, len);*/
 
         /*Close file*/
-        movq $3, %rax    
+        movq $SYS_CLOSE, %rax    
         movq fd, %rdi 
         syscall         
 

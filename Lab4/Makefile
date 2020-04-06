@@ -1,4 +1,4 @@
-AS_FLAGS=--gdwarf-2 -o 
+AS_FLAGS=--gdwarf-2 -o
 LD_FLAGS=--static
 SOURCES=remember_all.s
 OBJECTS=$(SOURCES:.s=.o)
